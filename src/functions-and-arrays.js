@@ -47,7 +47,29 @@ function sumNumbers(numbersArray) {
 }
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+
+function sum(mixedArray) {
+  if (mixedArray.length === 0) {
+    return 0;
+  }
+
+  let total = 0;
+
+  for (let i = 0; i < mixedArray.length; i++) {
+    let tipoDeDato = typeof mixedArray[i];
+    if (tipoDeDato == "number") {
+      total = total + mixedArray[i];
+    } else if (tipoDeDato == "string") {
+      total = total + mixedArray[i].length;
+    } else if (tipoDeDato == "boolean") {
+      total = total + Number(mixedArray[i]);
+    } else {
+      throw new Error(`Tipo de dato no soportado: ${typeof mixedArray[i]}con el valor ${mixedArray[i]}`);
+    }
+  }
+  return total;
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers

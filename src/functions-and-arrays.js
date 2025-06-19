@@ -15,16 +15,16 @@ const words = [
   "crackpot",
 ];
 
-function findLongestWord(wordsArray) {
-  if (wordsArray.length === 0) {
+function findLongestWord(words) {
+  if (words.length == 0) {
     return null;
   }
 
   let longest = "";
 
-  for (let i = 0; i < wordsArray.length; i++) {
-    if (wordsArray[i].length > longest.length) {
-      longest = wordsArray[i]; //longest, que está vacío, se convierte en la palabra en la que estoy ahora, es decir [i]
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i]; //longest, que está vacío, se convierte en la palabra en la que estoy ahora, es decir [i*
     }
   }
   return longest;
@@ -33,15 +33,15 @@ function findLongestWord(wordsArray) {
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(numbersArray) {
-  if (numbersArray.length === 0) {
+function sumNumbers(numbers) {
+  if (numbers.length === 0) {
     return 0;
   }
 
   let sum = 0;
 
-  for (let i = 0; i < numbersArray.length; i++) {
-    sum = sum + numbersArray[i];
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
   }
   return sum;
 }
@@ -49,23 +49,27 @@ function sumNumbers(numbersArray) {
 // Iteration #3.1 Bonus:
 const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 
-function sum(mixedArray) {
-  if (mixedArray.length === 0) {
+function sum(mixedArr) {
+  if (mixedArr.length === 0) {
     return 0;
   }
 
   let total = 0;
 
-  for (let i = 0; i < mixedArray.length; i++) {
-    let tipoDeDato = typeof mixedArray[i];
+  for (let i = 0; i < mixedArr.length; i++) {
+    let tipoDeDato = typeof mixedArr[i];
     if (tipoDeDato == "number") {
-      total = total + mixedArray[i];
+      total = total + mixedArr[i];
     } else if (tipoDeDato == "string") {
-      total = total + mixedArray[i].length;
+      total = total + mixedArr[i].length;
     } else if (tipoDeDato == "boolean") {
-      total = total + Number(mixedArray[i]);
+      total = total + Number(mixedArr[i]);
     } else {
-      throw new Error(`Tipo de dato no soportado: ${typeof mixedArray[i]}con el valor ${mixedArray[i]}`);
+      throw new Error(
+        `Tipo de dato no soportado: ${typeof mixedArr[i]}con el valor ${
+          mixedArr[i]
+        }`
+      );
     }
   }
   return total;
@@ -75,7 +79,18 @@ function sum(mixedArray) {
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  if (numbersAvg.length === 0) {
+    return null;
+  }
+
+  let resultado = 0;
+
+  for (let i = 0; i < numbersAvg.length; i++) {
+    resultado += numbersAvg[i];
+  }
+  return resultado / numbersAvg.length;
+}
 
 // Level 2: Array of strings
 const wordsArr = [

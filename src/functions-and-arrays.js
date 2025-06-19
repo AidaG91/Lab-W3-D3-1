@@ -106,7 +106,18 @@ const wordsArr = [
   "palace",
 ];
 
-function averageWordLength() {}
+function averageWordLength(wordsArr) {
+  if (wordsArr.length === 0) {
+    return null;
+  }
+
+  let resultado = 0;
+
+  for (let i = 0; i < wordsArr.length; i++) {
+    resultado = resultado + wordsArr[i].length;
+  }
+  return resultado / wordsArr.length;
+}
 
 // Bonus - Iteration #4.1
 function avg() {}

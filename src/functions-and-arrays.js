@@ -76,7 +76,7 @@ function sum(mixedArr) {
 }
 
 // Iteration #4: Calculate the average
-// Level 1: Array of numbers
+// Iteration #4 Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbersAvg) {
@@ -92,7 +92,7 @@ function averageNumbers(numbersAvg) {
   return resultado / numbersAvg.length;
 }
 
-// Level 2: Array of strings
+// Iteration #4 Level 2: Array of strings
 const wordsArr = [
   "seat",
   "correspond",
@@ -119,7 +119,7 @@ function averageWordLength(wordsArr) {
   return resultado / wordsArr.length;
 }
 
-// Bonus - Iteration #4.1
+// Bonus - Iteration #4.3
 
 function avg(mixedArr) {
   if (mixedArr.length === 0) {
@@ -156,7 +156,20 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) {
+  if (wordsUnique.length === 0) {
+    return null;
+  }
+
+  let almacen = [];
+
+  for (let i = 0; i < wordsUnique.length; i++) {
+    if (!almacen.includes(wordsUnique[i])) {
+      almacen.push(wordsUnique[i]);
+    }
+  }
+  return almacen;
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
